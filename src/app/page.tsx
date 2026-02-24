@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -8,13 +10,73 @@ import {
   marqueePrimaryItems,
   marqueeSecondaryItems,
 } from "@/content/site-content";
+import {
+  defaultOgImage,
+  getLocalBusinessJsonLd,
+  getOrganizationJsonLd,
+  getWebsiteJsonLd,
+  siteConfig,
+  siteUrl,
+} from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "Agência de Marketing em Presidente Prudente",
+  description:
+    "Branding, conteúdo e estratégia para transformar negócios em marcas vivas em Presidente Prudente e região.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Streel | Agência de Marketing em Presidente Prudente",
+    description:
+      "Branding, social media, tráfego pago e produção para negócios que querem crescer com presença forte.",
+    url: siteUrl,
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "Streel Marketing",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Streel | Agência de Marketing em Presidente Prudente",
+    description:
+      "Branding, social media, tráfego pago e produção para negócios que querem crescer com presença forte.",
+    images: [defaultOgImage],
+  },
+};
 
 export default function Home() {
+  const organizationJsonLd = getOrganizationJsonLd();
+  const localBusinessJsonLd = getLocalBusinessJsonLd();
+  const websiteJsonLd = getWebsiteJsonLd();
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationJsonLd),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessJsonLd),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteJsonLd),
+        }}
+      />
       <Header />
 
-      <main>
+      <main aria-label={`Página principal da ${siteConfig.name}`}>
         <div id="projetos">
           <Hero />
         </div>
