@@ -4,7 +4,7 @@ import { Instagram, Music2 } from "lucide-react";
 
 import { footerColumns } from "@/content/site-content";
 
-export function SiteFooter() {
+export function Footer() {
   return (
     <footer className="border-t bg-[#121212] text-slate-100/90">
       <div className="mx-auto w-[min(1120px,calc(100%-2rem))] py-12">

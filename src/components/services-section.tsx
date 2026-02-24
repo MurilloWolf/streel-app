@@ -2,48 +2,10 @@
 
 import { ArrowRight } from "lucide-react";
 
+import { services } from "@/content/site-content";
 import { useInView } from "@/hooks/use-in-view";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import { cn } from "@/lib/utils";
-
-const services = [
-  {
-    title: "BRANDING",
-    lines: [
-      "Posicionamento estratégico",
-      "Tom de voz da marca",
-      "Identidade visual",
-      "Direção criativa",
-    ],
-  },
-  {
-    title: "SOCIAL MEDIA",
-    lines: [
-      "Calendário editorial",
-      "Produção de conteúdo",
-      "Gestão de comunidade",
-      "Análise de desempenho",
-    ],
-  },
-  {
-    title: "TRÁFEGO PAGO",
-    lines: [
-      "Campanhas Meta Ads",
-      "Segmentação por objetivo",
-      "Otimização contínua",
-      "Relatórios de conversão",
-    ],
-  },
-  {
-    title: "PRODUÇÃO",
-    lines: [
-      "Captação de imagem",
-      "Edição de vídeos curtos",
-      "Fotos para campanhas",
-      "Cobertura de ações locais",
-    ],
-  },
-];
 
 export function ServicesSection() {
   const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.2 });

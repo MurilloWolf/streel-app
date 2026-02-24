@@ -10,7 +10,7 @@ import { useScrollY } from "@/hooks/use-scroll-y";
 
 const SHRINK_AT_PX = 12;
 
-export function SiteHeader() {
+export function Header() {
   const scrollY = useScrollY();
   const scrolled = scrollY > SHRINK_AT_PX;
 

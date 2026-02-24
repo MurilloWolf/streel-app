@@ -4,27 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Instagram, Mail, MessageCircle, Music2 } from "lucide-react";
 
+import { socialLinks } from "@/content/site-content";
 import { useInView } from "@/hooks/use-in-view";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
-const socialLinks = [
-  {
-    label: "Instagram",
-    href: "https://instagram.com/streel_mkt",
-    icon: Instagram,
-  },
-  {
-    label: "WhatsApp",
-    href: "https://wa.me/5518997452901",
-    icon: MessageCircle,
-  },
-  {
-    label: "TikTok",
-    href: "https://tiktok.com/@streelmkt",
-    icon: Music2,
-  },
-];
+const socialIconMap = {
+  Instagram,
+  WhatsApp: MessageCircle,
+  TikTok: Music2,
+} as const;
 
 export function ContactSection() {
   const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.25 });
@@ -136,7 +125,7 @@ export function ContactSection() {
 
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((item) => {
-                const Icon = item.icon;
+                const Icon = socialIconMap[item.label];
 
                 return (
                   <Link

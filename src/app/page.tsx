@@ -1,14 +1,18 @@
 import { ContactSection } from "@/components/contact-section";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Marquee } from "@/components/marquee";
 import { ServicesSection } from "@/components/services-section";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
+import {
+  marqueePrimaryItems,
+  marqueeSecondaryItems,
+} from "@/content/site-content";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <SiteHeader />
+      <Header />
 
       <main>
         <div id="projetos">
@@ -21,29 +25,10 @@ export default function Home() {
               <div className="grid min-h-45 content-center gap-2 sm:min-h-55 sm:gap-4">
                 <Marquee
                   reverse
-                  items={[
-                    { label: "Não passe despercebido." },
-                    { label: "Posicionamento de marca com estratégia" },
-                    { label: "Conteúdo que conecta e converte" },
-                    { label: "Criatividade com foco em resultado" },
-                    { label: "Sua marca lembrada todos os dias" },
-                    { label: "Comunicação forte em cada detalhe" },
-                    { label: "Marketing com identidade de verdade" },
-                  ]}
+                  items={marqueePrimaryItems}
                   speedSeconds={60}
                 />
-                <Marquee
-                  items={[
-                    { label: "Branding para quem quer crescer" },
-                    { label: "Do feed ao faturamento" },
-                    { label: "Seja destaque onde estiver" },
-                    { label: "Campanhas que geram movimento" },
-                    { label: "Design que gera percepção de valor" },
-                    { label: "Estratégia local com presença digital" },
-                    { label: "Sua marca em outro nível" },
-                  ]}
-                  speedSeconds={65}
-                />
+                <Marquee items={marqueeSecondaryItems} speedSeconds={65} />
               </div>
             </div>
           </div>
@@ -53,7 +38,7 @@ export default function Home() {
         <ContactSection />
       </main>
 
-      <SiteFooter />
+      <Footer />
     </div>
   );
 }
