@@ -18,9 +18,9 @@ export function HeroSlideStack({
   onSlideSelect,
 }: HeroSlideStackProps) {
   return (
-    <div className="relative mx-auto w-full max-w-130 lg:ml-auto lg:mr-0 lg:translate-x-10 lg:-translate-y-24">
+    <div className="relative mx-auto w-full max-w-88 sm:max-w-120 lg:ml-auto lg:mr-0 lg:max-w-130 lg:translate-x-10 lg:-translate-y-24">
       <div className="relative aspect-4/3">
-        <div className="absolute left-0 top-1/2 z-30 -translate-x-8 -translate-y-1/2 sm:-translate-x-10">
+        <div className="absolute left-2 top-1/2 z-30 -translate-y-1/2 sm:left-0 sm:-translate-x-8">
           <div className="flex flex-col gap-3">
             {slides.map((slide, index) => {
               const isActive = index === active;

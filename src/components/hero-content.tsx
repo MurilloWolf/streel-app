@@ -6,12 +6,12 @@ export function HeroContent() {
   return (
     <div className="space-y-8">
       <div className="space-y-3">
-        <h1 className="text-4xl leading-[1.08] tracking-tight sm:text-5xl font-(family-name:--font-pirata)">
-          <span className="font-medium text-8xl bg-linear-to-br from-zinc-400 via-zinc-800 to-zinc-900 bg-clip-text text-transparent drop-shadow-sm">
+        <h1 className="font-(family-name:--font-pirata) text-4xl leading-[1.05] tracking-tight sm:text-5xl">
+          <span className="bg-linear-to-br from-zinc-400 via-zinc-800 to-zinc-900 bg-clip-text text-[3.25rem] font-medium text-transparent drop-shadow-sm sm:text-7xl lg:text-8xl">
             Vida e presença
           </span>
           <br />
-          <span className="font-medium text-8xl bg-linear-to-br from-zinc-400 via-zinc-800 to-zinc-900 bg-clip-text text-transparent drop-shadow-sm">
+          <span className="bg-linear-to-br from-zinc-400 via-zinc-800 to-zinc-900 bg-clip-text text-[3.25rem] font-medium text-transparent drop-shadow-sm sm:text-7xl lg:text-8xl">
             para seu negócio
           </span>
         </h1>
@@ -19,7 +19,7 @@ export function HeroContent() {
 
       <div className="grid gap-6 sm:grid-cols-[1fr,auto] sm:items-start">
         <div className="space-y-5">
-          <p className="font-serif max-w-md text-2xl leading-6 text-black/70">
+          <p className="max-w-md font-serif text-lg leading-7 text-black/70 sm:text-2xl sm:leading-8">
             Branding, conteúdo e estratégia para transformar negócios em marcas
             vivas.
           </p>
@@ -28,7 +28,7 @@ export function HeroContent() {
               asChild
               variant="outline"
               size="lg"
-              className="h-12 w-72 text-xl rounded-full border-foreground/15 bg-background text-foreground/80 hover:bg-background"
+              className="h-12 w-full max-w-72 rounded-full border-foreground/15 bg-background text-base text-foreground/80 hover:bg-background sm:text-xl"
               fillClassName="bg-foreground"
               icon={<ArrowRight className="size-4 " />}
             >

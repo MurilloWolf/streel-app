@@ -19,7 +19,7 @@ export function ContactSection() {
   const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.25 });
 
   return (
-    <section id="contato" className="relative overflow-hidden py-24">
+    <section id="contato" className="relative overflow-hidden py-16 sm:py-24">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-linear-to-br from-sky-100/35 via-transparent to-indigo-100/35"
@@ -71,7 +71,25 @@ export function ContactSection() {
 
               <div
                 className={cn(
-                  "absolute -bottom-40 -left-20 aspect-2/1 h-64 w-96 overflow-hidden rounded-3xl border border-foreground/10 shadow-sm z-20",
+                  "mt-4 aspect-video w-full overflow-hidden rounded-3xl border border-foreground/10 shadow-sm md:hidden",
+                  "transition-all duration-700 delay-150 ease-out motion-reduce:transition-none",
+                  isInView
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-6 opacity-0",
+                )}
+              >
+                <Image
+                  src="/assets/streel-location.png"
+                  alt="Conteúdo para redes sociais"
+                  fill
+                  sizes="(max-width: 768px) 90vw, 540px"
+                  className="object-cover"
+                />
+              </div>
+
+              <div
+                className={cn(
+                  "absolute -bottom-32 -left-16 z-20 hidden aspect-2/1 h-64 w-96 overflow-hidden rounded-3xl border border-foreground/10 shadow-sm md:block",
                   "transition-all duration-700 delay-150 ease-out motion-reduce:transition-none",
                   isInView
                     ? "translate-y-0 opacity-100"
@@ -115,10 +133,10 @@ export function ContactSection() {
                 : "translate-x-10 opacity-0",
             )}
           >
-            <h2 className="font-bold text-5xl reveal-up__inner bg-linear-to-br from-slate-300 via-blue-900 to-slate-900 bg-clip-text text-transparent drop-shadow-sm sm:text-4xl md:text-6xl">
+            <h2 className="reveal-up__inner bg-linear-to-br from-slate-300 via-blue-900 to-slate-900 bg-clip-text text-4xl font-bold text-transparent drop-shadow-sm sm:text-5xl md:text-6xl">
               Entre em Contato
             </h2>
-            <p className="max-w-lg text-2xl text-foreground/80 bg-white p-4 sm:text-base">
+            <p className="max-w-lg bg-white p-4 text-lg text-foreground/80 sm:text-xl md:text-2xl">
               Fale com a gente e descubra como podemos ajudar a impulsionar sua
               marca com soluções feitas sob medida para você.
             </p>
@@ -133,7 +151,7 @@ export function ContactSection() {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="pokemon-foil-card group inline-flex h-12 min-w-34 items-center justify-center gap-2 rounded-xl border border-white/30 px-4 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5"
+                    className="pokemon-foil-card group inline-flex h-12 min-w-38 flex-1 items-center justify-center gap-2 rounded-xl border border-white/30 px-4 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 sm:flex-none"
                   >
                     <Icon className="size-4 transition-transform duration-300 group-hover:scale-110" />
                     {item.label}

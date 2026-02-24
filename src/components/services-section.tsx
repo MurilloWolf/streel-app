@@ -11,12 +11,12 @@ export function ServicesSection() {
   const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.2 });
 
   return (
-    <section id="servicos" className="relative py-20">
+    <section id="servicos" className="relative py-16 sm:py-20">
       <div className="mx-auto w-[min(1120px,calc(100%-2rem))]">
         <div ref={ref} className="relative">
           <h2
             className={cn(
-              "reveal-up mb-10 text-center text-6xl font-semibold tracking-tight",
+              "reveal-up mb-10 text-center text-5xl font-semibold tracking-tight sm:text-6xl",
               isInView && "in",
             )}
           >
@@ -29,8 +29,8 @@ export function ServicesSection() {
             className={cn(
               "mx-auto overflow-hidden rounded-3xl border shadow-sm transition-all duration-4300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none relative z-0",
               isInView
-                ? "h-105 w-full max-w-6xl p-10"
-                : "h-150 w-75 max-w-6xl p-6",
+                ? "w-full max-w-6xl p-5 sm:p-8 md:h-105 md:p-10"
+                : "w-full max-w-6xl p-5 sm:p-6 md:h-150 md:w-75",
             )}
           >
             <div className="absolute inset-0 -z-10 bg-[url('/assets/sao-paulo.webp')] bg-cover bg-center bg-no-repeat grayscale contrast-125 brightness-75 opacity-60 mix-blend-multiply" />
@@ -44,7 +44,7 @@ export function ServicesSection() {
                   : "opacity-0 translate-y-3",
               )}
             >
-              <div className=" grid gap-8 md:grid-cols-4">
+              <div className="grid gap-8 md:grid-cols-4">
                 {services.map((s, idx) => (
                   <div key={`${s.title}-${idx}`} className="space-y-3">
                     <p className="text-lg font-bold tracking-widest text-white">

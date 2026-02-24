@@ -27,8 +27,8 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden min-h-screen">
       <PlusGridBackground />
-      <div className="relative z-10 mx-auto w-[min(1120px,calc(100%-2rem))] pt-40 pb-16">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr,0.95fr]">
+      <div className="relative z-10 mx-auto w-[min(1120px,calc(100%-2rem))] pt-28 pb-14 sm:pt-32 sm:pb-16 lg:pt-40">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-[1.05fr,0.95fr]">
           <HeroContent />
           <HeroSlideStack
             slides={heroSlides}

@@ -52,7 +52,7 @@ export function Header() {
         >
           <div
             className={cn(
-              "flex items-center justify-between gap-6",
+              "flex items-center justify-between gap-3 sm:gap-6",
               scrolled ? "px-2" : "",
             )}
           >
@@ -66,11 +66,11 @@ export function Header() {
                 alt="Streel Logo"
                 width={400}
                 height={200}
-                className="h-12 w-auto object-contain brightness-0"
+                className="h-10 w-auto object-contain brightness-0 sm:h-12"
                 priority
               />
             </Link>
-            <nav className="flex items-center gap-6 text-sm text-foreground/80">
+            <nav className="flex items-center gap-3 text-xs text-foreground/80 sm:gap-6 sm:text-sm">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
