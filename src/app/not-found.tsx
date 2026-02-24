@@ -38,7 +38,8 @@ export default function NotFound() {
 
           <p className="mx-auto mt-4 max-w-2xl text-lg text-foreground/75 sm:text-xl">
             O conteúdo que você procurou não está disponível neste endereço.
-            Volte para a página inicial e continue explorando a {siteConfig.name}.
+            Volte para a página inicial e continue explorando a{" "}
+            {siteConfig.name}.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

@@ -32,10 +32,7 @@ export const siteConfig = {
     postalCode: "19027-100",
     addressCountry: "BR",
   },
-  social: [
-    "https://instagram.com/streel_mkt",
-    "https://tiktok.com/@streelmkt",
-  ],
+  social: ["https://instagram.com/streel_mkt", "https://tiktok.com/@streelmkt"],
 } as const;
 
 function normalizeSiteUrl(rawUrl?: string) {
